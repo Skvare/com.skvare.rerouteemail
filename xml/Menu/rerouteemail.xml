@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/admin/rerouteemail</path>
+    <page_callback>CRM_Rerouteemail_Form_Setting</page_callback>
+    <title>Reroute Email Setting</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+</menu>
