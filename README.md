@@ -3,6 +3,8 @@
 ![Screenshot](/images/screenshot.png)
 
 CiviCRM Reroute Email is an extension providing configuration to reroute all CiviCRM transactional emails and mailings to a different email address. Dev/staging instances often use this extension for testing purposes.
+
+
 This is an [extension for CiviCRM](https://docs.civicrm.org/sysadmin/en/latest/customize/extensions/), licensed under [AGPL-3.0](LICENSE.txt).
 
 ## Getting Started
