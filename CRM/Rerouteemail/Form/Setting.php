@@ -7,7 +7,7 @@ use CRM_Rerouteemail_ExtensionUtil as E;
  *
  * @see https://docs.civicrm.org/dev/en/latest/framework/quickform/
  */
-class CRM_Rerouteemail_Form_Setting extends CRM_Core_Form {
+class CRM_Rerouteemail_Form_Setting extends CRM_Admin_Form_Setting {
 
   /**
    * @throws \CRM_Core_Exception
@@ -38,6 +38,10 @@ class CRM_Rerouteemail_Form_Setting extends CRM_Core_Form {
     $this->addFormRule(['CRM_Rerouteemail_Form_Setting', 'formRule'], $this);
   }
 
+  /**
+   * Process the user submitted custom data values.
+   *
+   */
   public function postProcess(): void {
     $values = $this->exportValues();
     $domainID = CRM_Core_Config::domainID();
@@ -51,6 +55,19 @@ class CRM_Rerouteemail_Form_Setting extends CRM_Core_Form {
     CRM_Core_Session::setStatus(E::ts('Setting updated successfully'));
   }
 
+  /**
+   * Global form rule.
+   *
+   * @param array $values
+   *   The input form values.
+   * @param array $files
+   *   The uploaded files if any.
+   * @param CRM_Core_Form $self
+   *   The form object.
+   *
+   * @return bool|array
+   *   true if no errors, else array of errors
+   */
   public static function formRule($values, $files, $self) {
     $errors = [];
     if (!empty($values['rerouteemail_email']) && !filter_var($values['rerouteemail_email'], FILTER_VALIDATE_EMAIL)) {

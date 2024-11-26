@@ -11,3 +11,12 @@ This is an [extension for CiviCRM](https://docs.civicrm.org/sysadmin/en/latest/c
 
 * Visit for configuration: http://domain.name/civicrm/admin/rerouteemail
 * Enabled the setting and put an email address. Now each email sent by civicrm is received by this email address.
+
+## Override settings
+
+Override through `civicrm.settings.php` file.
+
+```php
+$civicrm_setting['Reroute Extension Settings']['rerouteemail_enable'] = 1;
+$civicrm_setting['Reroute Extension Settings']['rerouteemail_email'] = 'override@youdomain.com';
+```
